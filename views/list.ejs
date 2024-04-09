@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Consultas</h1>
+        <br>
+        <form action="/searchresult" method="get">
+            <input type="search" name="search" id="search" placeholder="Digite e-mail ou CPF">
+            <button class="btn btn-success">Pesquisar</button>
+        </form>
+        <br>
+        <%appos.forEach(appo=>{%>
+            <div class="card">
+                <div class="card-header">
+                    <h2>ID da consulta: <%=appo._id%></h2>
+                </div>
+                <div class="card-body">
+                    <h3>Nome: <%=appo.name%></h3>
+                    <h3>Email: <%=appo.email%></h3>
+                    <h3>Descrição: <%=appo.description%></h3>
+                    <h3>CPF: <%=appo.cpf%></h3>
+                    <h3>Horário: <%=appo.time%></h3>
+                </div>
+            </div>
+            <hr>
+        <%})%>
+    </div>
+</body>
+</html>
